@@ -3,86 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kübra | Portfolyo</title>
+  <title>Kübra | Web Portföyü</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f5f7fb;
-      color: #253047;
-      line-height: 1.6;
+      background: #ffffff;
+      color: #24213a;
+      line-height: 1.7;
     }
+
     header {
-      background: #243b65;
+      padding: 22px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #eeeaf7;
+    }
+
+    .logo { color: #7047d7; font-weight: bold; font-size: 21px; }
+
+    nav a {
+      color: #514969;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 85px 8% 75px;
+      background: linear-gradient(135deg, #faf8ff, #ffffff);
+    }
+
+    .tag {
+      color: #7047d7;
+      background: #eee8ff;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 13px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 6vw, 54px);
+      line-height: 1.2;
+      margin: 25px 0 18px;
+    }
+
+    h1 span { color: #7047d7; }
+
+    .hero p { max-width: 600px; color: #666078; }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: #7047d7;
       color: white;
-      text-align: center;
-      padding: 45px 20px;
+      text-decoration: none;
+      font-weight: bold;
     }
-    main {
-      max-width: 800px;
-      margin: 25px auto;
-      padding: 20px;
+
+    section { padding: 55px 8%; }
+
+    h2 { font-size: 28px; margin-bottom: 20px; }
+    .muted { color: #706b80; }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
     }
-    section {
-      background: white;
-      padding: 22px;
-      margin-bottom: 18px;
-      border-radius: 12px;
+
+    .skills span {
+      padding: 10px 15px;
+      background: #f4f0ff;
+      border: 1px solid #e7defe;
+      border-radius: 10px;
+      color: #5d3bb2;
     }
-    h2 { color: #315b99; }
-    a { color: #315b99; }
+
+    .project {
+      max-width: 600px;
+      padding: 25px;
+      border: 1px solid #e9e4f3;
+      border-radius: 16px;
+      box-shadow: 0 8px 25px #33205b0b;
+    }
+
+    .project h3 { margin-bottom: 8px; }
+    .project p { color: #706b80; margin-bottom: 15px; }
+
+    .project a, .github-link {
+      color: #7047d7;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
     footer {
+      padding: 25px 8%;
+      background: #faf8ff;
+      color: #706b80;
       text-align: center;
-      padding: 20px;
-      color: #68748a;
+      font-size: 14px;
+    }
+
+    @media (max-width: 500px) {
+      header { padding: 18px 5%; }
+      nav a { margin-left: 8px; font-size: 12px; }
+      .hero, section { padding-left: 6%; padding-right: 6%; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Merhaba, ben Kübra!</h1>
-    <p>Bilgisayar Programcılığı Mezunu</p>
-    <p>Web Tasarımı | Frontend | Yazılım Destek</p>
+    <div class="logo">Kübra.</div>
+    <nav>
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#beceriler">Beceriler</a>
+      <a href="#projeler">Projeler</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Hakkımda</h2>
-      <p>
-        Bilgisayar Programcılığı mezunuyum.
-        Web tasarımı, frontend geliştirme ve yazılım
-        destek alanlarıyla ilgileniyorum.
-        Kendimi geliştirmeye ve yeni şeyler öğrenmeye
-        devam ediyorum.
-      </p>
-    </section>
+  <div class="hero">
+    <span class="tag">Bilgisayar Programcılığı Mezunu</span>
+    <h1>Merhaba, ben Kübra.<br><span>Web dünyasında</span> gelişiyorum.</h1>
+    <p>Web tasarımı, frontend geliştirme ve yazılım destek alanlarıyla ilgileniyorum. Öğrenmeye ve kendimi geliştirmeye devam ediyorum.</p>
+    <a class="button" href="#projeler">Projelerimi keşfet →</a>
+  </div>
 
-    <section>
-      <h2>Becerilerim</h2>
-      <p>HTML5, CSS3, Bootstrap (temel), SQL (temel)</p>
-    </section>
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+    <p class="muted">Bilgisayar Programcılığı mezunuyum. HTML, CSS ve temel SQL bilgimle web geliştirme alanında kendimi geliştiriyorum. Yazılım süreçlerinde öğrenmeye ve yeni deneyimler kazanmaya açığım.</p>
+  </section>
 
-    <section>
-      <h2>Projelerim</h2>
-      <p>Burada GitHub projelerimi tanıtacağım.</p>
+  <section id="beceriler">
+    <h2>Becerilerim</h2>
+    <div class="skills">
+      <span>HTML5</span>
+      <span>CSS3</span>
+      <span>Bootstrap (Temel)</span>
+      <span>SQL (Temel)</span>
+      <span>MS Office</span>
+      <span>Visual Studio</span>
+    </div>
+  </section>
+
+  <section id="projeler">
+    <h2>Projelerim</h2>
+    <p class="muted" style="margin-bottom:22px">Üzerinde çalıştığım projelerden biri.</p>
+    <div class="project">
       <h3>Seyahat Projesi</h3>
-<p>Visual Studio ile geliştirdiğim seyahat temalı web projem.</p>
-<a href="https://github.com/kubraselen/seyahatproje_">
-  Projeyi GitHub'da incele
-</a>
-      <a href="https://github.com/kubraselen">
-        GitHub profilimi ziyaret et
-      </a>
-    </section>
+      <p>Visual Studio ile geliştirdiğim seyahat temalı web projem.</p>
+      <a href="https://github.com/kubraselen/Seyahatrproje_">Projeyi GitHub'da incele →</a>
+    </div>
+  </section>
 
-    <section>
-      <h2>İletişim</h2>
-      <p>Projelerimi incelemek için GitHub profilimi ziyaret edebilirsiniz.</p>
-    </section>
-  </main>
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p class="muted">Projelerime ve çalışmalarımın kodlarına GitHub profilimden ulaşabilirsin.</p>
+    <a class="button" href="https://github.com/kubraselen">GitHub profilim</a>
+  </section>
 
-  <footer>
-    © 2026 Kübra | Portfolyo
-  </footer>
+  <footer>© 2026 Kübra · Kişisel Portföy</footer>
+
 </body>
 </html>
